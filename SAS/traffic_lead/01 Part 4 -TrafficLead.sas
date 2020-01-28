@@ -27,3 +27,18 @@ PROC SGPLOT DATA=example;
 PROC REG DATA=example;
  MODEL lead=traffic / P CLM CLI;
  RUN;
+ 
+ /* generate diagnostics */
+ PROC REG DATA=example; 
+ MODEL lead=traffic / P CLM CLI; 
+ OUTPUT OUT=diagnostics 
+ RESIDUAL = resid 
+ PREDICTED = fitted; 
+ RUN;
+
+PROC SGPLOT DATA=diagnostics; 
+SCATTER x=fitted y=resid; 
+RUN;
+PROC UNIVARIATE DATA=diagnostics NOPRINT; 
+QQPLOT resid /  NORMAL(MU=EST SIGMA=EST COLOR=BLACK); 
+RUN;
