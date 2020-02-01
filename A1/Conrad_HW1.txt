@@ -1,0 +1,266 @@
+/* HW 1 Blake Conrad */
+
+/* 1st DATASET */
+
+DATA global_warming;
+INPUT id temp salinity;
+DATALINES;
+  1  20.69   33.129
+  2  13.98   33.485
+  3  12.86   33.710
+  4  12.20   33.580
+  5  14.14   33.520
+  6  14.52   33.310
+  7  15.67   33.650
+  8  18.14   33.720
+  9  16.93   33.905
+ 10  19.61   34.293
+ 11  13.91   33.660
+ 12  21.18   34.490
+ 13  20.25   33.592
+ 14  16.14   33.430
+ 15  16.93   33.230
+ 16  15.13   33.660
+ 17  14.29   33.280
+ 18  16.31   33.510
+ 19  15.54   33.440
+ 20  19.42   33.460
+ 21  21.35   33.780
+ 22  13.68   32.606
+ 23  15.39   33.304
+ 24  15.23   32.890
+ 25  15.35   33.570
+ 26  18.33   33.415
+ 27  16.84   33.425
+ 28  16.90   33.590
+ 29  19.05   33.570
+ 30  14.75   33.570
+ 31  14.28   33.545
+ 32  16.43   32.887
+ 33  16.62   32.940
+ 34  15.82   33.492
+ 35  17.23   33.300
+ 36  13.24   33.463
+ 37  13.61   33.130
+ 38  13.90   32.900
+ 39  13.37   33.344
+ 40  16.58   33.540
+ 41  19.04   33.220
+ 42  13.00   33.320
+ 43  14.32   33.280
+ 44  12.64   33.597
+ 45  19.16   33.473
+ 46  12.54   33.241
+ 47  16.03   33.530
+ 48  21.25   33.440
+ 49  17.58   33.000
+ 50  13.06   33.143
+ 51  15.64   33.630
+ 52  16.92   33.481
+ 53  15.85   33.320
+ 54  15.65   33.890
+ 55  17.14   33.247
+ 56  20.85   34.368
+ 57  15.73   33.116
+ 58  17.18   33.632
+ 59  14.10   33.370
+ 60  18.04   33.390
+ 61  18.81   33.125
+ 62  13.89   33.350
+ 63  15.90   33.428
+ 64  13.81   32.790
+ 65  16.83   33.413
+ 66  19.08   34.020
+ 67  14.65   32.950
+ 68  14.93   33.020
+ 69  21.58   33.810
+ 70  24.30   34.420
+ 71  15.71   33.410
+ 72  14.68   33.306
+ 73  13.96   33.400
+ 74  19.64   34.490
+ 75  13.85   32.711
+ 76  13.90   33.510
+ 77  13.60   33.220
+ 78  13.28   33.520
+ 79  12.67   33.504
+ 80  15.18   33.027
+ 81  13.99   33.382
+ 82  16.01   33.650
+ 83  18.69   33.380
+ 84  20.06   33.430
+ 85  15.36   33.630
+ 86  14.91   33.230
+ 87  16.51   33.860
+ 88  26.00   34.460
+ 89  18.59   33.631
+ 90  13.90   33.580
+ 91  16.06   33.127
+ 92  14.06   32.950
+ 93  20.98   33.730
+ 94  17.95   34.040
+ 95  17.68   33.680
+ 96  11.92   33.440
+ 97  15.82   33.640
+ 98  14.38   33.550
+ 99  17.35   33.589
+100  19.02   33.310
+101  .       33.495
+;
+
+PROC PRINT DATA=global_warming; 
+RUN;
+
+proc means data=global_warming max min;
+var salinity;
+run;
+
+/* create a scatterplot of the (x,y) pairs  */
+PROC SGPLOT DATA=global_warming;
+  SCATTER X=salinity Y=temp;
+  RUN;
+
+/* generate the fitted regression line  */
+PROC REG DATA=global_warming;
+ MODEL temp=salinity / P CLM CLI;
+ RUN;
+ 
+ /* generate diagnostics */
+ PROC REG DATA=global_warming; 
+ MODEL temp=salinity / P CLM CLI; 
+ OUTPUT OUT=diagnostics 
+ RESIDUAL = resid 
+ PREDICTED = fitted; 
+ RUN;
+
+PROC SGPLOT DATA=diagnostics; 
+SCATTER x=fitted y=resid; 
+RUN;
+PROC UNIVARIATE DATA=diagnostics NOPRINT; 
+QQPLOT resid /  NORMAL(MU=EST SIGMA=EST COLOR=BLACK); 
+RUN;
+
+
+
+/* 2nd DATASET */
+
+DATA part2;
+INPUT id x y;
+DATALINES;
+ 1  6.9 124.4
+ 2  2.8  58.4
+ 3  5.6  97.7
+ 4  4.1  56.5
+ 5  8.1 144.4
+ 6 14.6 315.3
+ 7  3.3  71.6
+ 8 14.1 293.3
+ 9 12.2 239.7
+10 10.7 174.0
+11 11.8 204.0
+12 11.6 226.6
+13  2.9  31.9
+14 14.1 315.0
+15  4.3  58.9
+16  4.4  82.5
+17  4.4 101.1
+18  8.5 132.1
+19 15.4 386.2
+20 13.4 301.8
+21 14.9 342.7
+22 14.2 303.6
+23  2.6  11.3
+24 13.0 274.3
+25  3.6  49.8
+26 16.1 401.0
+27 11.9 227.7
+28  4.9  47.9
+29 13.2 251.8
+30  9.7 160.4
+31  7.7 120.4
+32  9.4 173.2
+33 16.0 409.2
+34 11.4 205.6
+35 16.8 411.8
+36  9.2 180.8
+37  4.6  65.3
+38 12.8 262.6
+39  2.4  62.5
+40  3.1  64.5
+41  3.3  62.4
+42 14.1 323.8
+43 15.5 341.2
+44 12.2 254.4
+45  5.4  61.5
+46  2.1  66.6
+47  6.9 138.1
+48 11.2 239.1
+49  6.3 147.1
+50 10.3 215.4
+;
+
+PROC PRINT DATA=part2; 
+RUN;
+
+proc means data=part2 max min;
+var x;
+run;
+
+/* create a scatterplot of the (x,y) pairs  */
+PROC SGPLOT DATA=part2;
+  SCATTER X=x Y=y;
+  RUN;
+
+/* generate the fitted regression line  */
+PROC REG DATA=part2;
+ MODEL y=x / P CLM CLI;
+ RUN;
+ 
+ /* generate diagnostics */
+ PROC REG DATA=part2; 
+ MODEL y=x / P CLM CLI; 
+ OUTPUT OUT=diagnostics 
+ RESIDUAL = resid 
+ PREDICTED = fitted; 
+ RUN;
+
+/* More diagnostics */
+PROC SGPLOT DATA=diagnostics; 
+SCATTER x=fitted y=resid; 
+RUN;
+PROC UNIVARIATE DATA=diagnostics NOPRINT; 
+QQPLOT resid /  NORMAL(MU=EST SIGMA=EST COLOR=BLACK); 
+RUN;
+
+/* Transform and remodel */
+
+data transform;
+ set part2;
+ logx = log(x);
+ logy = log(y);
+ yinv = 1/y;
+ sqrtx = sqrt(x);
+ run; 
+ 
+ /* generate the fitted regression line  */
+PROC REG DATA=transform;
+ MODEL logy=x / P CLM CLI;
+ RUN;
+ 
+ /* generate diagnostics */
+ PROC REG DATA=transform; 
+ MODEL logy=x / P CLM CLI; 
+ OUTPUT OUT=diagnostics 
+ RESIDUAL = resid 
+ PREDICTED = fitted; 
+ RUN;
+
+/* More diagnostics */
+PROC SGPLOT DATA=diagnostics; 
+SCATTER x=fitted y=resid; 
+RUN;
+
+PROC UNIVARIATE DATA=diagnostics NOPRINT; 
+QQPLOT resid /  NORMAL(MU=EST SIGMA=EST COLOR=BLACK); 
+RUN;
+ 
