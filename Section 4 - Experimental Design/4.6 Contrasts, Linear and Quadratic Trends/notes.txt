@@ -1,0 +1,11 @@
+Pairwise comparisons from the previous lesson are limited to comparing two treatment means at a time.  For some research objectives, more general comparisons are needed.  As an example, suppose we are comparing 4 recipes (treatments) on the quality of baked bread.  (The quality of each loaf of bread will be assigned by taste testers.)  Our 4 recipes are the following: (1) high fat, high fiber; (2) high fat, low fiber; (3) low fat, high fiber; and (4) low fat, low fiber.  This is actually two-factor experiment (with factors Fat and Fiber), which we will discuss in more detail in the next module.   For now, we consider these treatments as a one-way design so the corresponding means are \mu_1,\:\mu_2,\:\mu_3,\:\mu_4µ 1 , µ 2 , µ 3 , µ 4.  
+
+The mean quality for the high fat recipes is   and for low fat it is  .  To compare high fat to low fat, we need to test
+
+     H_0\colon 0.5\mu_1+0.5\mu_2=\:0.5\mu_3+0.5\:\mu_4\:H 0 : 0.5 µ 1 + 0.5 µ 2 = 0.5 µ 3 + 0.5 µ 4
+
+vs. H_0\colon 0.5\mu_1+0.5\mu_2\ne\:0.5\mu_3+0.5\:\mu_4\:H 0 : 0.5 µ 1 + 0.5 µ 2 ? 0.5 µ 3 + 0.5 µ 4
+
+This is not a straight comparison of two means, so the techniques in the previous section cannot be applied.
+
+Methods for performing this hypothesis test are explained in the section.   (There are no "Check Your Knowledge" questions this time.)

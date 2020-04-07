@@ -1,0 +1,1 @@
+Randomization and blocking are essential elements in devising a plan for data collection.  In this lesson, we define these two elements and present examples of how and when they should be used when designing an experiment.   

@@ -1,0 +1,1 @@
+So far, we have examined data in which the only random component is the error term.  The resulting linear models are called "fixed effects" models.   In some situations, the factors themselves can be random.  Models that include random factors as well as random error are called "random effects" models.  In this lesson, we explore how to interpret random effects models. 

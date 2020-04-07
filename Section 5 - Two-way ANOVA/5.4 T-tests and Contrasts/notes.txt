@@ -1,0 +1,29 @@
+So far, we have looked at F tests to determine if the effects are significant.  We now turn our attention to the treatment means.  We can test (and get confidence intervals) for one mean (treatment or marginal), or for the difference of two means, or for a contrast of means.  We illustrate these techniques using the fabric data, in which cotton fabric is treated with one of three inorganic salts in one of two concentrations for the purpose of measuring the temperature at which the fabric ignites.  (We first used this data set in Section 5.1.)  In this lesson, we perform the calculations by hand -- we will use SAS in the next lesson.
+
+colorline.jpg
+
+Check Your Knowledge
+
+Question: 
+
+Using the fabric data, construct contrast statements for each hypothesis test.  Why are these two tests not the same?
+
+Test #1: Is there a difference between the marginal means of CaCO3 and CaCl2?   
+Test #2: Is the average temperature for CaCO3 and CaCl2 at Level 1 equal to the average temperature of CaCO3 and CaCl2 at Level 2?  
+
+Answer:
+
+In the textbook, we concluded that there is NOT a difference for Test #1, but there IS a difference for Test #2. 
+
+The notation for the treatment means and their estimates are shown in the table. 
+
+ 	Untreated	CaCO3	CaCl3
+Level 1	    (838.33)   	   (727.00) 	    (723.67)  
+Level 2	   (915.00)  	   (778.67) 	    (783.67)  
+ 
+
+Test #1 is comparing the marginal means of two of the salts.  The null hypothesis is  0.5\left(\mu_{12}+\mu_{22}\right)\:=0.5\left(\mu_{13}+\mu_{23}\right)\:0.5 ( µ 12 + µ 22 ) = 0.5 ( µ 13 + µ 23 ), which can be expressed as \mu_{12}+\mu_{22}\:-\mu_{13}-\mu_{23}\:=0µ 12 + µ 22 - µ 13 - µ 23 = 0.    The point estimate is 727.00 + 778.67 - 723.67 - 783.67 = -1.67
+
+Test #2 is comparing the two levels, averaged across 2 of the salts.  The null hypothesis is 0.5\left(\mu_{12}+\mu_{13}\right)\:=0.5\left(\mu_{22}+\mu_{23}\right)\:0.5 ( µ 12 + µ 13 ) = 0.5 ( µ 22 + µ 23 ), which can be expressed as \:\mu_{12}+\mu_{13}-\mu_{22}-\mu_{23}\:=0µ 12 + µ 13 - µ 22 - µ 23 = 0. The point estimate is -111.67.
+
+Notice that both of these tests are using the same four treatment means, but in different orders.  Test #1 is comparing the average of a large and a small number to the average of another large and small number.  Test #2 is comparing the average of two small numbers to the average of two large numbers.  From this perspective, it is not surprising that we fail to reject Test #1, but we do reject Test #2.

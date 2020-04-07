@@ -1,0 +1,25 @@
+There are three data sets with this lesson.  Before you read this section in the textbook, analyze each data set, then compare your answers to the ones given in the book.  
+
+Here is the general approach to doing an analysis.
+
+Make a two-way table of the means or an interaction plot of the means to help you interpret the results of the ANOVA.
+Check the p-value of interaction to determine if it is significant.  If it is significant, both factors are important (i.e. they affect the outcome).  If interaction is not significant, check the p-values of the main effects. This will tell you which factors are important.
+Compare the means to determine how the factors affect the outcome.  If interaction is significant, compare treatment means.  If interaction is not significant, compare the marginal means of the factors that are significant.  Use the two-way table of means or the interaction plot to help you interpret the results of the ANOVA.
+Summarize the important points of your analysis.
+ 
+
+The data sets
+Example 1:  Steel Springs   thumbRightRedArrow.jpgSteel spring data.txt
+Steel springs are made in large batches.  The percentage of good springs in a batch depends on the temperature at which the spring are made and the amount of carbon in the steel.  The values of temperature at 1500 and 1600 and the values of carbon are 0.5, 0.6, and 0.7. 
+
+ 
+
+Example 2: Preservatives thumbRightRedArrow.jpgPreservative data.txt
+
+Two different amounts of a preservative were applied to packages of a food product.  There were 32 packages in all, 16 that received 100 units of preservative and the other 16 that received 400 units of the preservative.  Four of the packages with 100 units of preservative and four with 400 units of preservative were selected for analysis each week, and this was done for a total of four weeks.  Bacterial counts were made on each package.  The logarithms of bacterial counts were analyzed. 
+
+ 
+
+Example 3: Average daily gain thumbRightRedArrow.jpgAverage daily gain data.txt
+
+An animal scientist compared two diets to see if one is better than the other in terms of enhancing weight gain of cattle.  The cattle were divided into two groups of 16 animals (bulls and steers).  Half of each group were given diet 1 and the other half were given diet 2.  The average daily weight gain (DG) was measured for each animal. 

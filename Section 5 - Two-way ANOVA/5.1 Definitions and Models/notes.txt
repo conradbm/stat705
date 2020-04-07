@@ -1,0 +1,3 @@
+Two-way ANOVA is an extension of one-way experimental designs.  Instead of a single factor (perhaps with many levels), there are two factors and each potentially has many levels. We consider only factorial designs, in which each level of one factor is combined with every level of the other factor.   These are sometimes called "crossed" designs.  For example, a 2x4 (read "2 by 4") factorial design has 8 treatments, and there is at least one observation for each treatment.  
+
+In this section, we introduce the terminology associated with two-way factorial designs.  We also explain how this type of data can be analyzed using linear models.

@@ -1,0 +1,7 @@
+If the overall F test is significant when performing an analysis of variance, then we conclude that there are differences among the treatment means.  However, this F test provides no information about which mean (or means) might be different.  To explore this, we perform "post-hoc" tests to compare specific treatments that we are interested in.  For some experiments, the research objective dictates the comparisons of interest, but for other experiments we might want to compare every treatment to every other treatment (i.e., all possible pairs).  Regardless of the specific comparisons, any time we perform multiple tests with the same data we increase the likelihood that we will make a Type I error (reject H0 when H0 is true).  To keep the Type I error rate at , we must make some adjustments.  There are numerous methods of adjustment, but we consider these five:
+
+Fisher's Least Significant Difference
+Tukey's Honest Significant Difference
+Bonferroni's adjustment
+Scheffe's method
+Dunnett's method

@@ -1,0 +1,10 @@
+The assumptions for ANOVA models are the same as for regression models.  These are
+
+the errors are independent
+the errors follow a normal distribution
+the errors have mean 0
+the errors have constant variance 
+To verify these assumptions we use the same methods we did in regression, namely normal probability plots and residual plots.  In addition, we have formal tests for equality of variance.  These tests were not applicable to regression data because we could not guarantee that the X values would be repeated (i.e. multiple observations for the same value of X).  Since ANOVA models are generally the result of controlled experiments, the values for X are set in advance and multiple observations are recorded for each value of X.  This is called replication, and it permits formal hypothesis tests for equality of variance.
+
+There are also numerous formal hypothesis tests to assess whether the errors are normal, but these tests (in general) suffer low power with small sample sizes and too much power for large sample sizes.  In other words, these tests have a hard time detecting non-normality when the the sample sizes are small, and they tend to conclude that nothing is normal when the sample sizes are large.  Therefore, we will continue to rely on a visual assessment of the normal probability plot to decide if the errors are normal.
+

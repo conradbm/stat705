@@ -1,0 +1,5 @@
+Hypotheses for  two-way designs are an extension of those for one-way designs.  Since there are now two factors, we have F tests for each of the two factors (these are main effects), and another F test for the interaction.  These are in addition to the overall ANOVA F test.  Depending on the results of these tests, we may also be interested in performing t tests to compare specific combinations of treatment means.   
+
+In this lesson, we look primarily at the F tests and formally define the hypotheses in terms of the interaction model. 
+
+ (There are no "Check Your Knowledge" questions for this lesson.)
